@@ -1,12 +1,13 @@
 {{ titulo }} <br />
 {{ request.user }} 
 <hr />
-
+{% if form  %}
 <form action="" method="POST">
     {% csrf_token %}
 
      
-    {{ el_form.as_p }}
+    {{ form.as_p }}
 
-    <input type="submit" value="Cadastrar"  />
+    <input type="submit" value="Enviar"  />
 </form>
+{% endif %}

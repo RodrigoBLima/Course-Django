@@ -24,6 +24,9 @@ class RegModelForm(forms.ModelForm):
 
 # inputs 
 
-class RegForm(forms.Form):
-    nombre = forms.CharField(max_length=100)
+class ContactForm(forms.Form):
+    nombre = forms.CharField(required=False)
     email = forms.EmailField() 
+    mensaje = forms.CharField(widget=forms.Textarea)
+
+   

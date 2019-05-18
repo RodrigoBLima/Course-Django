@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from .forms import RegForm,RegModelForm
+from .forms import RegModelForm, ContactForm
 from .models import Registrado
 
 # Create your views here.
@@ -40,3 +40,17 @@ def inicio(request):
 
    
     return render(request, "inicio.html", context)
+    
+
+def contact(request):
+    form = ContactForm(request.POST or None)
+    if form.is_valid():
+        email = form.cleaned_data.get("email")
+        mensaje = form.cleaned_data.get("mensaje")
+        nombre = form.cleaned_data.get("nombre")
+        #print email,mensaje, nombre
+
+        context = {
+            "form" : form,
+        }
+    return render(request, "forms.html", context)
