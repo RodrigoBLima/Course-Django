@@ -22,7 +22,8 @@ class RegModelForm(forms.ModelForm):
         nombre = self.cleaned_data.get("nombre")
         return nombre
 
-# inputs form
-        class RegForm(forms.Form):
-            nombre = forms.CharField(max_length=100)
-            email = forms.EmailField() 
+# inputs 
+
+class RegForm(forms.Form):
+    nombre = forms.CharField(max_length=100)
+    email = forms.EmailField() 
