@@ -7,24 +7,31 @@
 {% block jumbotron_content %}
 
 <div class="jumbotron">
-    <h1>Navbar example</h1>
-    <p class="lead">This example is a quick exercise to illustrate how the top-aligned navbar works. As you scroll, this navbar remains in its original position and moves with the rest of the page.</p>
-    <a class="btn btn-lg btn-primary" href="/docs/4.3/components/navbar/" role="button">View navbar docs &raquo;</a>
-  </div>
-  
+    <div class="row">
+        <div class="col-sm-6">
+            <h1>Conhecendo Django</h1>
+            <p class="lead">Projeto básico com o intuito de me aprofundar no framework e na linguagem</p>
+            <a class="btn btn-lg btn-dark" href="http://github.com/RodrigoBLima" role="button">Meu repositório &raquo;</a>
+        </div>
+        <div class="col-sm-6" style="background-color:black;height:300px ;"></div>
+    </div>
+</div>
 {% endblock %}
 
-{{ titulo }} <br />
-{{ request.user }} 
-<hr />
+
 
 
 {% block content %}
-<form action="" method="POST">{% csrf_token %}
+<div class="row">
+    <div class="col-sm-6 col-xs-12 col-md-4 pull-right">
+            <p class="lead">{{ titulo }}</p>
+            <form action="" method="POST">{% csrf_token %}
+                {{ el_form|crispy }}
+                    
+               <input type="submit" class="btn btn-lg btn-dark" value="Cadastrar"  />
+            </form>
+    </div>
+</div>
 
-        {{ el_form|crispy }}
-        
-            <input type="submit" class="btn btn-lg btn-primary" value="Cadastrar"  />
-</form>
         
 {% endblock %}

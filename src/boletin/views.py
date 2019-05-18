@@ -7,9 +7,9 @@ from .models import Registrado
 
 # Create your views here.
 def inicio(request):
-    titulo = "Hola"
+    titulo = "Bem vindo"
     if request.user.is_authenticated():
-        titulo = "Bem vindo %s" %(request.user)
+        titulo = "Bem vindo"
     form = RegModelForm(request.POST or None)
 
     context = {  
