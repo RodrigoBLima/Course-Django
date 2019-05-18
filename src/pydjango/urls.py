@@ -16,6 +16,14 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+"""
+my views
+"""
+from boletin import views
+#from boletin.views inicio
+
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^$', views.inicio, name='inicio')
 ]
