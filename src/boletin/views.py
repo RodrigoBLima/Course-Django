@@ -64,4 +64,4 @@ def contact(request):
     context = {
         "form" : form,
     }
-    return render(request, "forms.html", context)
+    return render(request, "inicio.html", context)

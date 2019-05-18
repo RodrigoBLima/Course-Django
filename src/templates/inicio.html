@@ -1,12 +1,25 @@
+{% extends "base.html" %}
+
+{% block head_title %} Bem Vindo | {{ block.super }} {% endblock %}
+
+
+{% block jumbotron_content  %}
+
+
+
+{% endblock %}
+
 {{ titulo }} <br />
 {{ request.user }} 
 <hr />
 
-<form action="" method="POST">
-    {% csrf_token %}
 
-     
-    {{ el_form.as_p }}
+{% block content %}
+<form action="" method="POST">{% csrf_token %}
 
-    <input type="submit" value="Cadastrar"  />
+        {{ el_form.as_p }}
+        
+            <input type="submit" value="Cadastrar"  />
 </form>
+        
+{% endblock %}
