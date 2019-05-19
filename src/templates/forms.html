@@ -1,13 +1,27 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block head_title %} Bem Vindo | {{ block.super }} {% endblock %}
+
+
 {{ titulo }} <br />
 {{ request.user }} 
 <hr />
+
+{% block content %}
 {% if form  %}
-<form action="" method="POST">
-    {% csrf_token %}
+<div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+        {% if titulo %}
+            <h1 class="text-align-center">{{ titulo }}</h1>
+        {% endif %}
+        <form action="" method="POST">{% csrf_token %}     
+            {{ form|crispy}}
 
-     
-    {{ form.as_p }}
-
-    <input type="submit" value="Enviar"  />
-</form>
+            <input type="submit" class="btn btn-large btn-dark col-sm-12" value="Enviar"  />
+        </form>
+    </div> 
+ </div>      
 {% endif %}
+{% endblock %}
+
